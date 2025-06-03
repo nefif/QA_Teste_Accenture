@@ -81,7 +81,12 @@ QA_Teste_Accenture/
 ## Como Executar os Testes
 
 ### Executar todos os testes:
-Navegue até a pasta raiz do projeto (`QA_Teste_Accenture`) e execute: behave
+Navegue até a pasta raiz do projeto (`QA_Teste_Accenture`) e execute: 
+```bash 
+behave
+```
 
 ## Executar um arquivo de feature específico: 
+```bash 
 behave features/nome_do_arquivo.feature
+```
