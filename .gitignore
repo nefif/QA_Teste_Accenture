@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+drivers/
+reports/
+*.pyc
+.cache/
