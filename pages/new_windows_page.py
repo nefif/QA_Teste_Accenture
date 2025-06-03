@@ -6,7 +6,7 @@ class NewWindowsPage:
     def __init__(self, driver):
         self.driver = driver
         self.new_window_button_id = "windowButton"
-        self.sample_heading_id = "sampleHeading" # ID do elemento na nova janela
+        self.sample_heading_id = "sampleHeading" 
 
     def clicar_new_window_button(self):
         """Clica no botão 'New Window'."""
@@ -28,29 +28,28 @@ class NewWindowsPage:
                 break
         
         if not new_window_handle:
-            return False, original_window_handle # Indica que a nova janela não foi encontrada
+            return False, original_window_handle 
 
         self.driver.switch_to.window(new_window_handle)
         
         try:
-            # Espera o elemento com a mensagem na nova janela
+
             mensagem_elemento = WebDriverWait(self.driver, 10).until(
                 EC.visibility_of_element_located((By.ID, self.sample_heading_id))
             )
             mensagem_encontrada = mensagem_elemento.text
-            print(f"DEBUG: Texto encontrado na nova janela: '{mensagem_encontrada}'") # Para depuração
+            print(f"DEBUG: Texto encontrado na nova janela: '{mensagem_encontrada}'") 
             return mensagem_esperada in mensagem_encontrada, original_window_handle
         except Exception as e:
-            print(f"DEBUG: Erro ao verificar mensagem na nova janela: {e}") # Para depuração
-            return False, original_window_handle # Retorna False se o elemento não for encontrado
+            print(f"DEBUG: Erro ao verificar mensagem na nova janela: {e}") 
+            return False, original_window_handle 
         finally:
-            # Importante: Não fecha a janela aqui para permitir o step de fechamento separado
             pass
 
     def fechar_janela_atual_e_retornar_para_original(self, original_window_handle):
         """Fecha a janela atual (que deve ser a nova) e retorna para a janela original."""
         if self.driver.current_window_handle != original_window_handle:
-            self.driver.close() # Fecha a janela atual (nova)
+            self.driver.close() 
         self.driver.switch_to.window(original_window_handle)
 
     def verificar_retorno_janela_original(self, original_window_handle):
