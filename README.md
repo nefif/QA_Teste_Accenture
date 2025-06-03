@@ -27,28 +27,6 @@ Este projeto contém testes automatizados para o site DemoQA, abrangendo tanto t
 * **Requests**: Para interações com APIs HTTP.
 * **webdriver-manager**: Para gerenciamento automático dos drivers do navegador (ex: ChromeDriver).
 
-## Estrutura do Projeto
-QA_Teste_Accenture/
-├── features/                 # Arquivos Gherkin (.feature) e definições de steps
-│   ├── steps/                # Implementações dos steps em Python
-│   │   ├── cadastro_steps.py # Steps para o formulário de cadastro web
-│   │   └── fluxo_completo_steps.py # Steps para o fluxo de API
-│   ├── environment.py        # Hooks do Behave (before_scenario, after_step, etc.)
-│   ├── cadastro_usuario.feature  # Cenários de teste para o cadastro web
-│   └── fluxo_completo_api.feature # Cenários de teste para o fluxo de API
-├── pages/                    # Page Objects para interação com as páginas web e APIs
-│   ├── cadastro_page.py      # Page Object para a página de formulário de cadastro
-│   ├── homepage.py           # Page Object para a página inicial do DemoQA
-│   └── api_demoqa.py         # Page Object para as interações com a API DemoQA
-├── utils/                    # Módulos utilitários
-│   └── data_generator.py     # Gerador de dados (ex: credenciais)
-├── data/                     # Pasta para arquivos de dados (ex: arquivo para upload)
-│   └── Texto.txt             # Arquivo de exemplo para upload
-├── screenshots_behave/       # Pasta onde os screenshots de cada step são salvos (criada em tempo de execução)
-├── behave.ini                # Configurações do Behave (ex: captura de output)
-├── requirements.txt          # Dependências do projeto Python
-└── README.md                 # Este arquivo
-
 ## Pré-requisitos
 
 * Python 3.x instalado.
